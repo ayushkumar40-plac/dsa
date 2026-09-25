@@ -4,19 +4,19 @@ public:
         sort(nums.begin(), nums.end());
         vector<vector<int>> result;
         vector<int> output;
-        backtrack(nums, 0, output, result);
+        solve(nums, 0, output, result);
         return result;
     }
     
 private:
-    void backtrack(vector<int>& nums, int start, vector<int>& output, vector<vector<int>>& result) {
+    void solve(vector<int>& nums, int start, vector<int>& output, vector<vector<int>>& result) {
         result.push_back(output);
         
         for (int i = start; i < nums.size(); i++) {
             if (i > start && nums[i] == nums[i - 1]) continue;
             
             output.push_back(nums[i]);
-            backtrack(nums, i + 1,output, result);
+            solve(nums, i + 1,output, result);
             output.pop_back(); 
         }
     }
