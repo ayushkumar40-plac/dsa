@@ -7,8 +7,9 @@ public:
         string result = "";
         for (int i = 0; i < val.size(); i++) {
             int times = num / val[i];
-            while (times--) {
-                result += sym[i];
+            while (times--) { // this tells about how many times symbol shld inserted
+
+             result += sym[i];
             }
             num %= val[i];
         }
